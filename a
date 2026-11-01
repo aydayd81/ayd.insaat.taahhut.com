@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYD İNŞAAT | Düzce Hafif Çelik, Prefabrik & Betonarme Yapılar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f97316;
+        }
+
+        .nav-links a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        .btn-orange {
+            background-color: #f97316;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .btn-green {
+            background-color: #16a34a;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(249, 115, 22, 0.2);
+            border: 1px solid #f97316;
+            color: #fb923c;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+
+        /* Grid Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .service-card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .service-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .service-card-body {
+            padding: 1.5rem;
+        }
+
+        .service-card-body h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card-body p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Callout 3D */
+        .callout-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .callout-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .callout-box p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.2rem;
+            text-align: left;
+            background: #f8fafc;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            padding: 1.2rem;
+            color: #475569;
+            display: none;
+            border-top: 1px solid #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #0f172a;
+        }
+
+        .info-item a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .map-container {
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile CTA Bar */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            padding: 0.6rem;
+            border-top: 1px solid #e2e8f0;
+            z-index: 1000;
+            gap: 0.5rem;
+        }
+
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .mobile-bar { display: flex; }
+            body { padding-bottom: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">AYD <span>İNŞAAT</span></a>
+            <nav class="nav-links">
+                <a href="#hizmetler">Hizmetlerimiz</a>
+                <a href="#3d-tasarim">3D Proje</a>
+                <a href="#sss">S.S.S.</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+            <a href="tel:05458529729" class="btn-orange">0545 852 97 29</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="badge">📍 D-100 Düzce Showroom</span>
+            <h1>Düzce'de Hayal Ettiğiniz <span style="color:#fb923c;">Hafif Çelik</span> ve <span style="color:#60a5fa;">Prefabrik</span> Evler</h1>
+            <p>Depreme %100 dayanıklı, yüksek yalıtımlı mühendislik yapıları. Arsa tapunuzla gelin, 15 dakikada 3D ev projenizi canlı çizip maliyetini çıkaralım.</p>
+            
+            <div class="hero-buttons">
+                <a href="https://wa.me/905458529729" class="btn-green">💬 WhatsApp İle Randevu Al</a>
+                <a href="tel:05458529729" class="btn-orange">📞 Hemen Ara: 0545 852 97 29</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HİZMETLERİMİZ -->
+    <section id="hizmetler">
+        <h2 class="section-title">Yapı Hizmetlerimiz</h2>
+        <p class="section-subtitle">Gelişmiş mühendislik çözümleri ile arsanıza değer katıyoruz.</p>
+
+        <div class="services-grid">
+            <!-- 1. KART: Hafif Çelik Taşıyıcı İskelet[cite: 5] -->
+            <div class="service-card">
+                <div class="service-card-img-wrapper">
+                    <img src="tek-katli-celik-ev.jpg" alt="Hafif Çelik Taşıyıcı İskelet" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1000&q=80'">
+                </div>
+                <div class="service-card-body">
+                    <h3>Hafif Çelik Taşıyıcı İskelet</h3>
+                    <p>Özel galvaniz kaplı çelik profillerden üretilen, yüksek deprem dayanımlı ve paslanmaz karkas sistemleri. İleri mühendislik ile milimetrik üretim.</p>
+                </div>
+            </div>
+
+            <!-- 2. KART: Prefabrik Ev & Villalar (Yeri Değiştirildi) -->
+            <div class="service-card">
+                <div class="service-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Prefabrik Ev & Villalar">
+                </div>
+                <div class="service-card-body">
+                    <h3>Prefabrik Ev & Villalar</h3>
+                    <p>Dört mevsime uygun yüksek ısı ve ses yalıtımlı, estetik dış cephe kaplamalı, kısa sürede montajı tamamlanan modern konut çözümleri.</p>
+                </div>
+            </div>
+
+            <!-- 3. KART: Betonarme & Ticari Yapılar (Yeri Değiştirildi) -->
+            <div class="service-card">
+                <div class="service-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Betonarme ve Sanayi Yapıları">
+                </div>
+                <div class="service-card-body">
+                    <h3>Betonarme & Ticari Yapılar</h3>
+                    <p>Endüstriyel tesisler, depolar, fabrikalar ve ticari binalar için komple betonarme ve çelik mühendislik çözümleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D PROJE VURGUSU -->
+    <section id="3d-tasarim">
+        <div class="callout-box">
+            <h2>Arsanız Var Ama Nasıl Bir Ev Sığacağını Bilmiyor musunuz?</h2>
+            <p>Arsa tapunuz veya ölçülerinizle D-100 üzerindeki Showroom'umuza gelin. Bilgisayarda gözünüzün önünde <strong>15 dakikada 3D projenizi çizelim</strong> ve maliyetini şeffafça çıkaralım. Üstelik tamamen ücretsiz!</p>
+            <a href="tel:05458529729" class="btn-orange" style="font-size: 1.1rem;">📞 0545 852 97 29 - Ücretsiz Çizim Alın</a>
+        </div>
+    </section>
+
+    <!-- SSS SECTION -->
+    <section id="sss">
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+        <p class="section-subtitle">Aklınıza takılan tüm soruların yanıtları burada.</p>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    1. Hafif Çelik ve Prefabrik yapıların farkı nedir? <span>▼</span>
+                </button>
+                <div class="faq-answer">
+                    Hafif çelik yapılarda binanın tüm taşıyıcı sistemi galvaniz çelik profillerden oluşur ve milimetrik olarak yerinde montajlanır. Prefabrik yapılarda ise fabrikada hazırlanan panel sistemler sahada birleştirilir. Her iki sistem de yüksek yalıtım ve deprem güvenliği sunar.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    2. Yapı ruhsatı almak gerekiyor mu? <span>▼</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, imarlı tüm arsalarda hafif çelik veya prefabrik yapılar için de belediye veya il özel idaresinden resmi yapı ruhsatı alınması gerekmektedir. AYD İnşaat olarak statik ve mimari projelerinizde tam destek sağlıyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    3. Ev teslim süreleri ne kadar sürüyor? <span>▼</span>
+                </button>
+                <div class="faq-answer">
+                    Projenin büyüklüğüne bağlı olarak üretim ve montaj süreci genellikle 30 ile 60 gün arasında tamamlanıp teslim edilmektedir.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    4. 3D Proje çizimi gerçekten ücretsiz mi? <span>▼</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, D-100 üzerindeki Showroom'umuza geldiğinizde arsa bilgilerinize göre 15 dakika içerisinde bilgisayar ortamında evinizin 3D modellemesini ücretsiz olarak yapıp fiyatlandırıyoruz.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM SECTION -->
+    <section id="iletisim">
+        <div class="contact-grid">
+            <div>
+                <h2 style="font-size:2rem; margin-bottom:1rem;">Showroom & Satış Ofisi</h2>
+                <p style="color:#64748b; margin-bottom:1.5rem;">İstanbul-Ankara D-100 Karayolu üzerindeki tesisimizde teşhir çelik ve prefabrik ev modellerimizi inceleyebilirsiniz.</p>
+                
+                <div class="info-item">
+                    <strong>📍 Adres:</strong>
+                    <span>D100 Karayolu üzeri Döngelli Mh. Kavşak mevkii No: 44 Çilimli / DÜZCE</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>📞 Telefon:</strong>
+                    <a href="tel:05458529729">0545 852 97 29</a>
+                </div>
+
+                <div class="info-item">
+                    <strong>💬 WhatsApp:</strong>
+                    <a href="https://wa.me/905458529729" style="color: #16a34a;">0545 852 97 29</a>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=40.85089477523515,31.02683629332191&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; AYD İNŞAAT - Düzce Çelik, Prefabrik & Betonarme Yapı Sistemleri. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- MOBİL SABİT BUTONLAR -->
+    <div class="mobile-bar">
+        <a href="tel:05458529729" class="btn-orange">📞 Hemen Ara</a>
+        <a href="https://wa.me/905458529729" class="btn-green">💬 WhatsApp</a>
+    </div>
+
+    <!-- SSS JS -->
+    <script>
+        function toggleFaq(btn) {
+            var answer = btn.nextElementSibling;
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
