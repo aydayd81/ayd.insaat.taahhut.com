@@ -1,0 +1,1 @@
+# ayd.insaat.taahhut.com
